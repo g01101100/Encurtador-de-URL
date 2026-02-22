@@ -8,8 +8,6 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
-import com.g01101100.EncurtadorDeUrl.utils.ShortCodeGenerator; 
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -32,7 +30,6 @@ public class URL{
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        this.shortCode = ShortCodeGenerator.generate();
     }
 
     @PreUpdate
